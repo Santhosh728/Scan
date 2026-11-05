@@ -254,10 +254,10 @@
               <i class="fa-solid fa-heart"></i>
             </div>
             <div class="balloon_one">
-              <img width="100px" src="./images/balloon1.png" alt="" />
+              <img width="100px" src="./images/balloon1.jpeg" alt="" />
             </div>
             <div class="balloon_two">
-              <img width="100px" src="./images/balloon2.png" alt="" />
+              <img width="100px" src="./images/balloon2.jpeg" alt="" />
             </div>
           </div>
 
@@ -464,5 +464,14 @@
       });
     </script>
     <script src="./script.js"></script>
+    <script>
+const music = document.getElementById("bgMusic");
+
+music.volume = 0.7;
+
+document.addEventListener("click", function playMusic() {
+    music.play();
+}, { once: true });
+</script>
   </body>
 </html>
