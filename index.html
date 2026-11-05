@@ -474,12 +474,19 @@
     <script src="./script.js"></script>
     <script>
 const music = document.getElementById("bgMusic");
+const startBtn = document.getElementById("startBtn");
+const startScreen = document.getElementById("startScreen");
 
-music.volume = 0.7;
+startBtn.addEventListener("click", function () {
+    music.volume = 0.7;
 
-document.addEventListener("click", function playMusic() {
-    music.play();
-}, { once: true });
+    music.play().then(() => {
+        startScreen.style.display = "none";
+    }).catch(error => {
+        console.log("Audio error:", error);
+    });
+});
 </script>
+   
   </body>
 </html>
