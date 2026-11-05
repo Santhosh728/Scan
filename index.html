@@ -194,17 +194,9 @@
   </head>
 
   <body>
- <audio id="bgMusic" loop preload="auto">
+ <audio id="bgMusic" autoplay loop preload="auto">
   <source src="./music/birthday.mp3" type="audio/mpeg">
 </audio>
-
-<div id="startScreen">
-  <div class="start-box">
-    <h1>❤️ A Special Surprise ❤️</h1>
-    <p>Someone has a birthday surprise for you!</p>
-    <button id="startBtn">Tap to Start 💖</button>
-  </div>
-</div>
     <!-- 👇 Your entire original content (untouched) -->
     <!-- START -->
     <div id="wrapper">
@@ -474,19 +466,12 @@
     <script src="./script.js"></script>
     <script>
 const music = document.getElementById("bgMusic");
-const startBtn = document.getElementById("startBtn");
-const startScreen = document.getElementById("startScreen");
 
-startBtn.addEventListener("click", function () {
-    music.volume = 0.7;
+music.volume = 0.7;
 
-    music.play().then(() => {
-        startScreen.style.display = "none";
-    }).catch(error => {
-        console.log("Audio error:", error);
-    });
-});
-</script>
-   
+document.addEventListener("click", function playMusic() {
+    music.play();
+}, { once: true });
+   </script>
   </body>
 </html>
